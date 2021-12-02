@@ -1,7 +1,9 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "../Utilities/ctoi.hpp"
 using namespace std;
+using namespace utilities;
 
 int main(int argc, char const *argv[])
 {
@@ -18,7 +20,7 @@ int main(int argc, char const *argv[])
         cout << "File opened successfully" << endl;
         while (getline(reader, line)){
             int index = line.length() - 1;
-            int x = line[index] - '0';
+            int x = ctoi(line[index]);
             cout << x << endl;
 
             if (line[0] == 'f'){
